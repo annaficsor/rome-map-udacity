@@ -1,5 +1,5 @@
 [{
-    "type": "attractions",
+    "type": "Attractions",
     "id": 1,
     "name": "Colosseum",
     "ll": "41.890649, 12.492531",
@@ -8,7 +8,7 @@
       "lng": 12.492531
     }
   }, {
-    "type": "attractions",
+    "type": "Attractions",
     "id": 2,
     "name": "St. Peter's Basilica",
     "ll": "41.902278, 12.454157",
@@ -17,7 +17,7 @@
       "lng": 12.454157
     }
   }, {
-    "type": "attractions",
+    "type": "Attractions",
     "id": 3,
     "name": "Ponte Sant'Angelo",
     "ll": "41.901531,12.463149",
@@ -26,7 +26,7 @@
       "lng": 12.463149
     }
   }, {
-    "type": "attractions",
+    "type": "Attractions",
     "id": 4,
     "name": "Trevi Fountain",
     "ll": "41.9009325,12.483313",
@@ -35,7 +35,7 @@
       "lng": 12.483313
     }
   }, {
-    "type": "attractions",
+    "type": "Attractions",
     "id": 5,
     "name": "Pantheon, Rome",
     "ll": "41.8986108,12.4746842",
@@ -44,7 +44,7 @@
       "lng": 12.4746842
     }
   }, {
-    "type": "attractions",
+    "type": "Attractions",
     "id": 6,
     "name": "Spanish Steps",
     "ll": "41.90599,12.482775",
@@ -53,7 +53,7 @@
       "lng": 12.482775
     }
   }, {
-    "type": "attractions",
+    "type": "Attractions",
     "id": 7,
     "name": "Pons Cestius",
     "ll": "41.8900275,12.4772563",
@@ -62,7 +62,7 @@
       "lng": 12.4772563
     }
   }, {
-    "type": "attractions",
+    "type": "Attractions",
     "id": 8,
     "name": "Palazzo della Civiltà Italiana",
     "ll": "41.8364068,12.4662038",
@@ -71,7 +71,7 @@
       "lng": 12.4662038
     }
   }, {
-    "type": "attractions",
+    "type": "Attractions",
     "id": 9,
     "name": "Campo de' Fiori",
     "ll": "41.8956395,12.4721124",
@@ -80,7 +80,7 @@
       "lng": 12.4721124
     }
   }, {
-    "type": "coffee",
+    "type": "Coffee",
     "id": 10,
     "name": "Tazza d'Oro",
     "ll": "41.899435,12.4773592",
@@ -89,7 +89,7 @@
       "lng": 12.4773592
     }
   }, {
-    "type": "coffee",
+    "type": "Coffee",
     "id": 11,
     "name": "Giolitti",
     "ll": "41.901143,12.475123",
@@ -98,7 +98,7 @@
       "lng": 12.475123
     }
   }, {
-    "type": "coffee",
+    "type": "Coffee",
     "id": 12,
     "name": "Caffè Sant’Eustachio",
     "ll": "41.89827,12.475379",
@@ -107,7 +107,7 @@
       "lng": 12.475379
     }
   }, {
-    "type": "coffee",
+    "type": "Coffee",
     "id": 13,
     "name": "Sciascia",
     "ll": "41.9098395,12.459496",
@@ -116,7 +116,7 @@
       "lng": 12.459496
     }
   }, {
-    "type": "food",
+    "type": "Restaurants",
     "id": 14,
     "name": "Barnum Café",
     "ll": "41.8970166,12.467857",
@@ -125,7 +125,7 @@
       "lng": 12.467857
     }
   }, {
-    "type": "food",
+    "type": "Restaurants",
     "id": 15,
     "name": "Cantina e Cucina",
     "ll": "41.8979612,12.471641",
@@ -134,7 +134,7 @@
       "lng": 12.471641
     }
   }, {
-    "type": "food",
+    "type": "Restaurants",
     "id": 16,
     "name": "Maccheroni",
     "ll": "41.9005502,12.4758828",
@@ -143,7 +143,7 @@
       "lng": 12.4758828
     }
   }, {
-    "type": "food",
+    "type": "Restaurants",
     "id": 17,
     "name": "Ai Tre Scalini",
     "ll": "41.8974201,12.4901217",
@@ -152,7 +152,7 @@
       "lng": 12.4901217
     }
   }, {
-    "type": "park",
+    "type": "Parks",
     "id": 18,
     "name": "Orto Botanico di Roma",
     "ll": "41.8924375,12.4644679",
@@ -161,7 +161,7 @@
       "lng": 12.4644679
     }
   }, {
-    "type": "park",
+    "type": "Parks",
     "id": 19,
     "name": "Pincian Hill",
     "ll": "41.9113578,12.4795928",
@@ -170,7 +170,7 @@
       "lng": 12.4795928
     }
   }, {
-    "type": "park",
+    "type": "Parks",
     "id": 20,
     "name": "Villa Doria Pamphili",
     "ll": "41.8867258,12.4564121",
@@ -179,7 +179,7 @@
       "lng": 12.4564121
     }
   }, {
-    "type": "park",
+    "type": "Parks",
     "id": 21,
     "name": "Parco Savello",
     "ll": "41.8851288,12.4803363",

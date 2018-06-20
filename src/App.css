@@ -1,4 +1,73 @@
-#map {
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  font-size: 3rem;
+  color: #84796F;
+}
+
+h2 {
+  font-weight: 600;
+  color: #84796F;
+  text-transform: uppercase;
+  padding-left: 30px;
+}
+
+.Attractions::after {
+  content: url('./icons/attraction-onecolor.svg');
+  padding-left: 5px;
+}
+
+.Restaurants::after {
+  content: url('./icons/food-onecolor.svg');
+  padding-left: 5px;
+}
+
+.Coffee::after {
+  content: url('./icons/coffe-onecolor.svg');
+  padding-left: 5px;
+}
+
+.Parks::after {
+  content: url('./icons/parks-onecolor.svg');
+  padding-left: 5px;
+}
+
+li {
+  font-weight: 400;
+  color: #AF9C8B;
+  list-style: none;
+  font-size: 1.1rem;
+}
+
+aside {
+  font-family: 'Signika', sans-serif;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  background-color: #FFF5E9;
+    -webkit-box-shadow: 0px 0px 36px 1px rgba(224,214,25,0.75);
+  -moz-box-shadow: 0px 0px 36px 1px rgba(224,214,25,0.75);
+  box-shadow: 0px 0px 36px 1px rgba(224,214,25,0.75);
+  z-index: 1000;
+}
+
+.list {
+  width: 80%;
+}
+
+.map-container {
   height: 100vh;
-  width: 100%;
+  width: 75%;
+  position: fixed;
+  right: 0;
+}
+
+#map {
+  height: 100%;
 }
