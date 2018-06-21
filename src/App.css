@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 h1 {
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
@@ -9,7 +13,6 @@ h2 {
   font-weight: 600;
   color: #84796F;
   text-transform: uppercase;
-  padding-left: 30px;
 }
 
 .Attractions::after {
@@ -32,23 +35,62 @@ h2 {
   padding-left: 5px;
 }
 
+.list-grid {
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+
+
 li {
   font-weight: 400;
   color: #AF9C8B;
   list-style: none;
   font-size: 1.1rem;
+  padding-left: 20px;
+  border-radius: 10px;
+
+}
+
+li[class^="loc"] {
+  width: 70%;
+}
+
+
+.locAttractions:hover, .locCoffee:hover, .locRestaurants:hover, .locParks:hover {
+  font-weight: bold;
+  color: #FFF5E9;
+}
+
+.locAttractions:hover {
+  background-color: #E95565;
+}
+
+.locCoffee:hover {
+  background-color: #E39F40;
+}
+
+.locRestaurants:hover {
+  background-color: #973A45;
+}
+
+.locParks:hover {
+  background-color: #9EAA20
 }
 
 aside {
   font-family: 'Signika', sans-serif;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
   width: 25%;
   height: 100%;
   position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
   left: 0;
   background-color: #FFF5E9;
     -webkit-box-shadow: 0px 0px 36px 1px rgba(224,214,25,0.75);
@@ -57,8 +99,133 @@ aside {
   z-index: 1000;
 }
 
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FFF5E9;
+    border-radius: 30px;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(122,55,10,0.3);
+-moz-box-shadow: 0px 0px 7px 0px rgba(122,55,10,0.3);
+box-shadow: 0px 0px 7px 0px rgba(122,55,10,0.3);
+}
+
 .list {
-  width: 80%;
+  width: 70%;
+}
+
+.drop-header {
+  background-color: #F7E7D7;
+  width: 200px;
+  height: 45px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.drop-header, .drop-list {
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
+-moz-box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
+box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
+}
+
+.drop-header-title {
+  color: #AF9C8B;
+  font-size: 1.1rem;
+}
+
+.arrow-down {
+  padding-left: 5px;
+}
+
+.drop-list {
+  position: fixed;
+  z-index: 1200;
+  background-color: #F7E7D7;
+  width: 200px;
+  border-radius: 5px;
+  padding-left: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+#Attractions::before{
+  content: url('./icons/attraction-onecolor.svg');
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+#Restaurants::before {
+  content: url('./icons/food-onecolor.svg');
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+#Coffee::before {
+  content: url('./icons/coffe-onecolor.svg');
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+#All::before {
+  content: url('./icons/marker-onecolor.svg');
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+#Parks::before {
+  content: url('./icons/parks-onecolor.svg');
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+#Attractions:hover::before {
+  content: url('./icons/attraction.svg');
+}
+
+#Coffee:hover::before {
+  content: url('./icons/coffee.svg');
+}
+
+#Restaurants:hover::before {
+  content: url('./icons/food.svg');
+}
+
+#Parks:hover::before {
+  content: url('./icons/park.svg');
+}
+
+#All:hover::before {
+  content: url('./icons/marker.svg');
+}
+
+#Attractions:hover {
+  color: #E95565;
+  font-weight: bold;
+}
+
+#Restaurants:hover {
+  color: #973A45;
+  font-weight: bold;
+}
+
+#Coffee:hover {
+  color: #E39F40;
+  font-weight: bold;
+}
+
+#All:hover {
+  color: #00a99d;
+  font-weight: bold;
+}
+
+#Parks:hover {
+  color: #9EAA20;
+  font-weight: bold;
 }
 
 .map-container {
