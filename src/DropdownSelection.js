@@ -26,7 +26,6 @@ class DropdownSelection extends Component {
   }
 
   handleClick(type) {
-    console.log(type)
     this.props.onUpdateType(type)
   }
 

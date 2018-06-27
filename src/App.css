@@ -13,6 +13,7 @@ h2 {
   font-weight: 600;
   color: #84796F;
   text-transform: uppercase;
+  display: flex;
 }
 
 .Attractions::after {
@@ -49,13 +50,14 @@ li {
   color: #AF9C8B;
   list-style: none;
   font-size: 1.1rem;
-  padding-left: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 10px;
 
 }
 
 li[class^="loc"] {
-  width: 70%;
+  width: 100%;
 }
 
 
@@ -112,7 +114,7 @@ box-shadow: 0px 0px 7px 0px rgba(122,55,10,0.3);
 }
 
 .list {
-  width: 70%;
+  width: 100%;
 }
 
 .drop-header {
@@ -226,6 +228,10 @@ box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
 #Parks:hover {
   color: #9EAA20;
   font-weight: bold;
+}
+
+.placeimage {
+  width: 100%;
 }
 
 .map-container {

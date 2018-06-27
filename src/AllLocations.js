@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import DropdownSelection from './DropdownSelection'
+
 
 
 class AllLocations extends Component {
@@ -12,11 +12,10 @@ class AllLocations extends Component {
 
   state = {
     listNames: ['Attractions', 'Coffee', 'Restaurants', 'Parks'],
-    selectedType: []
   }
 
-  updateType(type) {
-    this.setState({ selectedType:type })
+  handleClick(marker) {
+    this.props.onMap(marker)
   }
 
 
@@ -24,25 +23,23 @@ class AllLocations extends Component {
 
     return (
       <div>
-      {console.log(this.state.selectedType)}
-        <aside className="information">
           <h1>ROME</h1>
+
           <DropdownSelection
-            onUpdateType = {(type) => {
-              this.updateType(type);
-            }}
+            onUpdateType = {this.props.onUpdateType}
           />
-          {(this.state.selectedType.length < 1 || this.state.selectedType === 'All') &&(
+
+          {(this.props.selectedType.length < 1 || this.props.selectedType === 'All') &&(
           <div className="list">
           {this.state.listNames.map((title, index) => (
             <div key={title[index]} className='listChild'>
             <h2 className={`listType ${title}`}>{title}</h2>
               <div className="list-items">
                 <ul className="list-grid">
-                {this.props.locations
-                  .filter(type => type.type === title)
+                {this.props.markers
+                  .filter(type => type.id === title)
                   .map(location => (
-                  <li className={`loc${location.type}`} key={location.id}>{location.name}</li>))
+                  <li className={`loc${location.id}`} key={location.title} onClick={(e) => this.handleClick(location)}>{location.title}</li>))
                 }
                 </ul>
                 </div>
@@ -51,19 +48,19 @@ class AllLocations extends Component {
           </div>
           )}
 
-          {this.state.selectedType.length > 1 && (
+          {this.props.selectedType.length > 1 && (
           <div className="list">
           {this.state.listNames
-            .filter(type => type === this.state.selectedType)
+            .filter(type => type === this.props.selectedType)
             .map((title, index) => (
             <div key={title[index]} className='listChild'>
             <h2 className={`listType ${title}`}>{title}</h2>
               <div className="list-items">
                 <ul className="list-grid">
-                {this.props.locations
-                  .filter(type => type.type === title)
+                {this.props.markers
+                  .filter(type => type.id === title)
                   .map(location => (
-                  <li className={`loc${location.type}`} key={location.id}>{location.name}</li>))
+                  <li className={`loc${location.id}`} key={location.title} onClick={(e) => this.handleClick(location)}>{location.title}</li>))
                 }
                 </ul>
                 </div>
@@ -71,10 +68,7 @@ class AllLocations extends Component {
             ))}
           </div>
           )}
-        </aside>
-        <section className="map-container">
-          <div id="map"></div>
-        </section>
+
       </div>
     )
   }
