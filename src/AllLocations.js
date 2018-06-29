@@ -22,7 +22,7 @@ class AllLocations extends Component {
   render() {
 
     return (
-      <div>
+      <div className="allLoc">
           <h1>ROME</h1>
 
           <DropdownSelection

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import arrow from './icons/arrow-back.svg'
+import address from './icons/address.svg'
+import closed from './icons/closed.svg'
+import open from './icons/open.svg'
+import rating from './icons/rating.svg'
 
 class SelectedPlace extends Component {
   // static propTypes = {
@@ -12,29 +16,55 @@ class SelectedPlace extends Component {
   }
 
   render() {
+    const starTotal = 4;
+    const starPercentage = (this.props.price.length / starTotal) * 100;
+    const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
+    const divStyle = {width: starPercentageRounded};
 
     return (
       <div className="place">
-      <img onClick={() => this.handleClick()} className="back" src={arrow} alt="Go back arrow"/>
+      {this.props.name.length < 1 && (
+        <div class="holder">
+          <div class="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+      )}
+      {this.props.name.length > 1 && (
+      <div>
+      <div className="back" onClick={() => this.handleClick()}>
+      <img src={arrow} alt="Go back arrow"/><span className="backtext">BACK</span>
+      </div>
+      <h1>{this.props.name}</h1>
+      <div className="info">
+      <img src={address} alt="Address"/><span className="address">{this.props.address}</span>
+      </div>
+      <div className="info">
+      <img src={rating} alt="Rating"/><span className="rating">{this.props.rating}<span className="rating2">/5</span></span>
+      </div>
+      <div className="info">
+      <span>Price: </span>
+      <div className="stars-outer">
+        <div className="stars-inner" style={divStyle}></div>
+      </div>
+      </div>
 
-
-        <h1>{this.props.name}</h1>
-        <p>{this.props.address}</p>
-        {this.props.url.length > 1 && (
-        <a href={this.props.url}>More information</a>
+        {this.props.openingHours === true && (
+          <div className="info">
+          <img src={open} alt="open"/><span className="open">Now open!</span>
+          </div>
         )}
-        <p>{this.props.rating}</p>
-        <p>{this.props.price}</p>
-        <p>{this.props.wiki}</p>
-        {this.props.wikiImage.length > 1 && (
-        <img className="placeimage" src={this.props.wikiImage} alt={this.props.name}/>
-          )}
 
+        {this.props.openingHours === false && (
+          <div className="info">
+          <img src={closed} alt="closed"/><span className="closed">Currently closed :(</span>
+          </div>
+        )}
 
-
+        <div className="link"><a href={this.props.url}>More information >></a></div>
         {this.props.image.map((image, index) => (
           <img key={index} className="placeimage" src={image} alt={this.props.name}/>
         ))}
+          </div>
+        )}
       </div>
     )
   }

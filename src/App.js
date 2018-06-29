@@ -4,6 +4,7 @@ import locations from './locations.json'
 import mapStyle from './map-style.json'
 import AllLocations from './AllLocations'
 import SelectedPlace from './SelectedPlace'
+import SelectedPlaceWiki from './SelectedPlaceWiki'
 import scriptLoader from 'react-async-script-loader'
 import config from './config.json'
 import $ from "jquery";
@@ -11,6 +12,7 @@ import $ from "jquery";
 class App extends Component {
 
   state = {
+    marker: [],
     map: {},
     markers: [],
     infoWindow: [],
@@ -25,6 +27,8 @@ class App extends Component {
     hasError: false,
     wiki: [],
     wikiImage: '',
+    wikiUrl: '',
+    wikiName: '',
     selectedType: ''
   }
 
@@ -90,6 +94,7 @@ class App extends Component {
 
   example(filter){
     this.setState({
+      marker: filter,
       place: true,
       image: [],
       name:[],
@@ -100,7 +105,9 @@ class App extends Component {
       address:[],
       hasError: false,
       wiki: [],
-      wikiImage: ''
+      wikiImage: '',
+      wikiName: '',
+      wikiUrl: ''
     })
 
     if (filter.id === "Attractions") {
@@ -225,7 +232,7 @@ class App extends Component {
           }).then((resp) => resp.json()).then((response) => {
             this.setState({
               image: response.photos,
-              openingHours: response.hours,
+              openingHours: response.hours[0].is_open_now,
               url: response.url,
               price: response.price,
               rating: response.rating,
@@ -266,7 +273,7 @@ class App extends Component {
           crossDomain: true,
           dataType: 'jsonp'
         }).done(function(data) {
-
+          console.log(data)
           let page = data.query.pages;
           let pageId = Object.keys(data.query.pages)[0];
           let text = page[pageId].extract;
@@ -276,8 +283,8 @@ class App extends Component {
           this.setState({
             wiki: text,
             wikiImage: image,
-            url: url,
-            name: title
+            wikiUrl: url,
+            wikiName: title
           })
 
         }.bind(this));
@@ -316,7 +323,7 @@ class App extends Component {
         />
       )}
 
-        {this.state.place===true && (
+        {(this.state.place===true && ((this.state.marker.id === "Coffee") || (this.state.marker.id === "Restaurants"))) && (
           <SelectedPlace
           onUpdatePlace = {() => {
             this.updatePlace()
@@ -328,10 +335,21 @@ class App extends Component {
             price = {this.state.price}
             rating = {this.state.rating}
             address = {this.state.address}
+          />
+        )}
+
+        {(this.state.place===true && ((this.state.marker.id === "Attractions") || (this.state.marker.id === "Parks"))) && (
+          <SelectedPlaceWiki
+          onUpdatePlace = {() => {
+            this.updatePlace()
+          }}
+            wikiName = {this.state.wikiName}
+            wikiUrl = {this.state.wikiUrl}
             wiki = {this.state.wiki}
             wikiImage = {this.state.wikiImage}
           />
         )}
+
 
         {this.state.hasError===true && (
           <h3>Sorry, the database do not have results :( </h3>
