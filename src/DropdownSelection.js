@@ -8,7 +8,8 @@ class DropdownSelection extends Component {
   }
 
   state = {
-    showList: false
+    showList: false,
+    title: 'Filter by type'
   }
 
   showList = () => {
@@ -26,26 +27,27 @@ class DropdownSelection extends Component {
   }
 
   handleClick(type) {
-    this.props.onUpdateType(type)
+    this.props.onUpdateType(type);
+    this.setState({ title: type })
   }
 
   render() {
     return (
       <div className="drop-wrapper">
       <div className="drop-header" onClick={this.showList}>
-        <div className="drop-header-title">Filter by type</div>
+        <div className="drop-header-title">{this.state.title}</div>
         <img src={arrow} alt="arrow down" className='arrow-down'/>
       </div>
       {this.state.showList && (
-      <ul className="drop-list">
-        <li id="Attractions" onClick={(e) => this.handleClick(e.target.id)}>Attractions</li>
-        <li id="Coffee" onClick={(e) => this.handleClick(e.target.id)}>Coffee</li>
-        <li id="Restaurants" onClick={(e) => this.handleClick(e.target.id)}>Restaurants</li>
-        <li id="Parks" onClick={(e) => this.handleClick(e.target.id)}>Parks</li>
-        <li id="All" onClick={(e) => this.handleClick(e.target.id)}>All</li>
-      </ul>
+        <ul className="drop-list">
+          <li id="Attractions" onClick={(e) => this.handleClick(e.target.id)}>Attractions</li>
+          <li id="Coffee" onClick={(e) => this.handleClick(e.target.id)}>Coffee</li>
+          <li id="Restaurants" onClick={(e) => this.handleClick(e.target.id)}>Restaurants</li>
+          <li id="Parks" onClick={(e) => this.handleClick(e.target.id)}>Parks</li>
+          <li id="All" onClick={(e) => this.handleClick(e.target.id)}>All</li>
+        </ul>
       )}
-    </div>
+      </div>
     )
   }
 }
