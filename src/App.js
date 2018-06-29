@@ -309,7 +309,7 @@ class App extends Component {
 
       {this.state.place===false && (
         <AllLocations
-          map = {this.state.map}
+
           markers = {this.state.markers}
           locations = {locations}
           selectedType = {this.state.selectedType}
