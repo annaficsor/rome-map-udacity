@@ -8,8 +8,7 @@ class SelectedPlaceWiki extends Component {
     wikiName: PropTypes.string.isRequired,
     wiki: PropTypes.string.isRequired,
     wikiImage: PropTypes.string.isRequired,
-    wikiUrl: PropTypes.string.isRequired,
-    wikiName: PropTypes.string.isRequired
+    wikiUrl: PropTypes.string.isRequired
   }
 
   handleClick() {
