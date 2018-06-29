@@ -25,7 +25,7 @@ class App extends Component {
     rating:[],
     address:[],
     hasError: false,
-    wiki: [],
+    wiki: '',
     wikiImage: '',
     wikiUrl: '',
     wikiName: '',
@@ -104,7 +104,7 @@ class App extends Component {
       rating:[],
       address:[],
       hasError: false,
-      wiki: [],
+      wiki: '',
       wikiImage: '',
       wikiName: '',
       wikiUrl: ''
@@ -309,7 +309,6 @@ class App extends Component {
 
       {this.state.place===false && (
         <AllLocations
-
           markers = {this.state.markers}
           locations = {locations}
           selectedType = {this.state.selectedType}

@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import arrow from './icons/arrow-back.svg'
-import address from './icons/address.svg'
-import closed from './icons/closed.svg'
-import open from './icons/open.svg'
-import rating from './icons/rating.svg'
 
 class SelectedPlaceWiki extends Component {
-  // static propTypes = {
-  //   onUpdatePlace: PropTypes.func.isRequired
-  // }
+  static propTypes = {
+    onUpdatePlace: PropTypes.func.isRequired,
+    wikiName: PropTypes.string.isRequired,
+    wiki: PropTypes.string.isRequired,
+    wikiImage: PropTypes.string.isRequired,
+    wikiUrl: PropTypes.string.isRequired,
+    wikiName: PropTypes.string.isRequired
+  }
 
   handleClick() {
     this.props.onUpdatePlace()
@@ -19,8 +20,8 @@ class SelectedPlaceWiki extends Component {
     return (
       <div className="place">
       {this.props.wikiName.length < 1 && (
-        <div class="holder">
-          <div class="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div className="holder">
+          <div className="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div>
       )}
 
