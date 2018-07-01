@@ -22,6 +22,12 @@ class SelectedPlace extends Component {
     this.props.onUpdatePlace()
   }
 
+  keyEvent = (event) => {
+    if (event.key == 'Enter') {
+    this.props.onUpdatePlace()
+    }
+  }
+
   render() {
     const starTotal = 4;
     const starPercentage = (this.props.price.length / starTotal) * 100;
@@ -38,7 +44,7 @@ class SelectedPlace extends Component {
 
         {this.props.name.length > 1 && (
           <div>
-            <div className="back" onClick={() => this.handleClick()}>
+            <div className="back" onClick={() => this.handleClick()} onKeyPress={(e) => this.keyEvent(e)} tabIndex='0'>
             <img src={arrow} alt="Go back arrow"/><span className="backtext">BACK</span>
             </div>
 

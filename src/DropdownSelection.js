@@ -1,54 +1,74 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import arrow from './icons/filter-arrow.svg'
+import Downshift from 'downshift';
 
 class DropdownSelection extends Component {
-  static propTypes = {
-    onUpdateType: PropTypes.func.isRequired
+  constructor(props) {
+    super(props);
+    this.type = [
+      { name: "Attractions" },
+      { name: "Coffee" },
+      { name: "Restaurants" },
+      { name: "Parks" },
+      { name: "All" }
+    ];
+
+    this.state = {
+      selectedType: ""
+    };
+
+    this.onChange = this.onChange.bind(this);
   }
 
-  state = {
-    showList: false,
-    title: 'Filter by type'
-  }
-
-  showList = () => {
-    if (this.state.showList === false) {
-    this.setState({ showList: true });
-    document.addEventListener('click', this.closeMenu);
-  } else {
-    this.setState({ showList: false })
-  }
-  }
-
-  closeMenu = () => {
-    this.setState({ showList: false });
-    document.removeEventListener('click', this.closeMenu);
-  }
-
-  handleClick(type) {
-    this.props.onUpdateType(type);
-    this.setState({ title: type })
+  onChange(selectedType) {
+    this.setState({ selectedType: selectedType.name });
+    this.props.onUpdateType(selectedType.name)
   }
 
   render() {
     return (
-      <div className="drop-wrapper">
-      <div className="drop-header" onClick={this.showList}>
-        <div className="drop-header-title">{this.state.title}</div>
-        <img src={arrow} alt="arrow down" className='arrow-down'/>
-      </div>
-      {this.state.showList && (
-        <ul className="drop-list">
-          <li id="Attractions" onClick={(e) => this.handleClick(e.target.id)}>Attractions</li>
-          <li id="Coffee" onClick={(e) => this.handleClick(e.target.id)}>Coffee</li>
-          <li id="Restaurants" onClick={(e) => this.handleClick(e.target.id)}>Restaurants</li>
-          <li id="Parks" onClick={(e) => this.handleClick(e.target.id)}>Parks</li>
-          <li id="All" onClick={(e) => this.handleClick(e.target.id)}>All</li>
-        </ul>
-      )}
-      </div>
-    )
+      <Downshift
+        onChange={this.onChange}
+        selectedItem={this.state.selectedType}
+        itemToString={type => (type ? type.name : "")}
+      >
+        {({
+          isOpen,
+          getToggleButtonProps,
+          getItemProps,
+          highlightedIndex,
+          selectedItem: dsSelectedItem,
+          getLabelProps
+        }) => (
+          <div>
+            <button className="dropdown-button" {...getToggleButtonProps()}>
+              {this.state.selectedType !== ""
+                ? this.state.selectedType
+                : 'Filter by type'}
+               <img src={arrow} alt="arrow down" className='arrow-down'/>
+            </button>
+            <div style={{ position: "relative" }}>
+              {isOpen ? (
+                <div className="downshift-dropdown">
+                  {this.type.map((item, index) => (
+                    <div
+                      className={`dropdown-item ${item.name}`}
+                      {...getItemProps({ key: index, index, item })}
+                      style={{
+                        fontWeight: highlightedIndex === index ? "bold" : "normal"
+                      }}
+                    >
+                      {item.name}
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+          </div>
+        )}
+      </Downshift>
+    );
   }
 }
 
