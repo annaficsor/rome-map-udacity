@@ -21,6 +21,13 @@ class DropdownSelection extends Component {
     this.onChange = this.onChange.bind(this);
   }
 
+  /* ** When the user selects a type at the Dropdown
+  menu this function will change the button's text to
+  the selected type's text, and calls the onUpdateType
+  function, which will change the state of the type, so
+  that the component will show only the places that match
+  to this selection. ** */
+
   onChange(selectedType) {
     this.setState({ selectedType: selectedType.name });
     this.props.onUpdateType(selectedType.name)

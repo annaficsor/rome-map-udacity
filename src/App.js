@@ -41,7 +41,14 @@ class App extends Component {
     selectedType: ''
   }
 
-  componentWillReceiveProps({isScriptLoadSucceed}){
+  /* ** Loads the google map, sets the markers based
+  on a separate database, with the help of the
+  react-async-script-loader. The map styles data
+  are in a separate file. Add event listeners to
+  the markers, and also extend the bounds of the map
+  based on the markers locations** */
+
+  componentWillReceiveProps({isScriptLoadSucceed}) {
     if (isScriptLoadSucceed) {
       let markers = [];
       let map = new window.google.maps.Map(document.getElementById('map'), {
@@ -51,9 +58,7 @@ class App extends Component {
       });
 
       let bounds = new window.google.maps.LatLngBounds();
-      let infoWindow = new window.google.maps.InfoWindow({
-        maxWidth: 200
-      });
+      let infoWindow = new window.google.maps.InfoWindow();
 
       this.setState({
         map: map,
@@ -82,7 +87,7 @@ class App extends Component {
           title: title,
           id: id,
           icon: icon
-        })
+        });
 
         markers.push(marker);
 
@@ -92,7 +97,7 @@ class App extends Component {
         }).bind(this));
 
         bounds.extend(position);
-      })
+      });
 
       map.fitBounds(bounds);
       this.setState({ markers: markers });
@@ -101,6 +106,12 @@ class App extends Component {
         alert("Script not loaded");
     }
   }
+
+ /** With this function the selected marker's icon will be
+ the original colored version, the rest will change to a
+ one colored (brown) version, so that the selected one
+ outstands. This function also sets the state of the place true,
+ so that the user will see the SelectedPlace component.  ** */
 
   setMarkerIcon(selectedIcon){
     this.setState({
@@ -143,10 +154,19 @@ class App extends Component {
     });
   }
 
+  /** This function create the infowindow if the user click
+  on a marker or one of the items on the menu list.
+  The marker's content will be the streetview image
+  based on the selected place position, and the name of it.
+  At the end of the function it will call another function
+  (based on the type of the selected place) which will
+  fetch additinal data from another databases. ** */
+
   makeInfoWindow(marker) {
     let infowindow = this.state.infoWindow;
     let map = this.state.map;
 
+    /* Zoom into the place when the user click on it */
     map.setZoom(15);
     map.setCenter(marker.getPosition());
 
@@ -191,6 +211,17 @@ class App extends Component {
     }
   }
 
+  /** When the clicked place type is Coffee or Restaurant
+  the app fetches the additional data from Yelp's database.
+  Because Yelp's API doesn't support CORS, the app uses
+  cors-anywhere.herokuapp.com.
+  First step: search in Yelp database based on the selected
+  location's position and name.
+  If there is a match we fetch more data based on the
+  business id, and set the states of this location.
+  If there is no match at all: set the stete of
+  hasError to true ** */
+
   yelp(marker) {
     const search = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?';
     const lat = marker.getPosition().lat();
@@ -214,7 +245,6 @@ class App extends Component {
       'Access-Control-Allow-Origin': 'http://localhost:3000'
     };
 
-
     fetch(search + new URLSearchParams(params), {
       headers: headers
     }).then((resp) => resp.json()
@@ -235,9 +265,18 @@ class App extends Component {
           name: response.name,
         })
     }).catch(() => {
-          this.setState({ hasError: true })
+          this.setState({ hasError: true });
     })
   }
+
+  /** When the clicked place's type is Attraction or Park
+  the app fetches the additional data from Wikipedia's database.
+  First step: search in Wikipedia's database based on the selected
+  location's name.
+  If there is a match we call another function with the
+  Wikipedia's title.
+  If there is no match at all: set the state of
+  hasError to true. ** */
 
   wiki(marker) {
     $.ajax({
@@ -255,6 +294,11 @@ class App extends Component {
         this.setState({ hasError: true })
     }.bind(this));
   }
+
+  /** Make another ajax request based on the previously
+  fetched title, and set the states with the received data.
+  If an error occure the fail function set the hasError
+  state to true. ** */
 
   wikiText(title) {
     $.ajax({
@@ -278,17 +322,37 @@ class App extends Component {
       })
     }.bind(this)
     ).fail(function() {
-        this.setState({ hasError: true })
+        this.setState({ hasError: true });
     }.bind(this));
   }
 
+  /** When the user is at the selected place's page,
+  they have the option to go back to the main menu.
+  Whey they click on the back icon or text the app
+  set the place state to false. ** */
+
   updatePlace() {
-    this.setState({ place: false})
+    this.setState({ place: false});
   }
 
+  /** When the user selects a type at a
+  Dropdown selection menu, this state will filter
+  the type and shows the places that match ** */
+
   updateType(type) {
-    this.setState({ selectedType:type })
+    this.setState({ selectedType:type });
   }
+
+  /** Return components based on the state
+  of the place, marker.id  and hasError.
+  The state of the place initially false,
+  so the user will see the AllLocations component first.
+  When the user clicks on a marker or a place's name
+  on the list, the state of a place will change
+  so that they will see a SelectedPlace component
+  or SelectedPlaceWiki component based on the marker's id.
+  If the hasError state is true then an error
+  message will be returned. ** */
 
   render() {
     return (

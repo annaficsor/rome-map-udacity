@@ -17,66 +17,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-#Attractions::after {
-  content: url('./icons/attraction-onecolor.svg');
-  padding-left: 5px;
-}
-
-#Restaurants::after {
-  content: url('./icons/food-onecolor.svg');
-  padding-left: 5px;
-}
-
-#Coffee::after {
-  content: url('./icons/coffe-onecolor.svg');
-  padding-left: 5px;
-}
-
-#Parks::after {
-  content: url('./icons/parks-onecolor.svg');
-  padding-left: 5px;
-}
-
-.list-grid {
-  padding-left: 0;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: baseline;
-}
-
-
-li {
-  font-weight: 400;
-  color: #AF9C8B;
-  list-style: none;
-  font-size: 1.1rem;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 10px;
-
-}
-
-.locAttractions:hover, .locCoffee:hover, .locRestaurants:hover, .locParks:hover {
-  font-weight: bold;
-  color: #FFF5E9;
-}
-
-.locAttractions:hover {
-  background-color: #E95565;
-}
-
-.locCoffee:hover {
-  background-color: #E39F40;
-}
-
-.locRestaurants:hover {
-  background-color: #973A45;
-}
-
-.locParks:hover {
-  background-color: #9EAA20
-}
+/* ***** Section of the main manu ***** */
 
 aside {
   font-family: 'Signika', sans-serif;
@@ -105,19 +46,85 @@ aside {
   align-items: center;
 }
 
+.list {
+  width: 100%;
+}
 
+#Attractions::after {
+  content: url('./icons/attraction-onecolor.svg');
+  padding-left: 5px;
+}
+
+#Restaurants::after {
+  content: url('./icons/food-onecolor.svg');
+  padding-left: 5px;
+}
+
+#Coffee::after {
+  content: url('./icons/coffe-onecolor.svg');
+  padding-left: 5px;
+}
+
+#Parks::after {
+  content: url('./icons/parks-onecolor.svg');
+  padding-left: 5px;
+}
+
+.list-grid {
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+
+li {
+  font-weight: 400;
+  color: #AF9C8B;
+  list-style: none;
+  font-size: 1.1rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+.locAttractions:hover, .locCoffee:hover, .locRestaurants:hover, .locParks:hover {
+  font-weight: bold;
+  color: #FFF5E9;
+}
+
+.locAttractions:hover {
+  background-color: #E95565;
+}
+
+.locCoffee:hover {
+  background-color: #E39F40;
+}
+
+.locRestaurants:hover {
+  background-color: #973A45;
+}
+
+.locParks:hover {
+  background-color: #9EAA20
+}
+
+/* ***** Section of the scrollbar ***** */
 
 ::-webkit-scrollbar-thumb {
   background: #FFF5E9;
   border-radius: 30px;
-    -webkit-box-shadow: 0px 0px 7px 0px rgba(122,55,10,0.3);
-  -moz-box-shadow: 0px 0px 7px 0px rgba(122,55,10,0.3);
-  box-shadow: 0px 0px 7px 0px rgba(122,55,10,0.3);
+    -webkit-box-shadow: 0 0 7px 0 rgba(122,55,10,0.3);
+  -moz-box-shadow: 0 0 7px 0 rgba(122,55,10,0.3);
+  box-shadow: 0 0 7px 0 rgba(122,55,10,0.3);
 }
 
-.list {
-  width: 100%;
+
+::-webkit-scrollbar {
+    width: 20px;
 }
+
+/* ***** Section of the dropdown selection element ***** */
 
 .dropdown-button, .downshift-dropdown {
     -webkit-box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
@@ -230,6 +237,32 @@ button.dropdown-button {
   font-weight: bold;
 }
 
+/* ***** Section of the selected place ***** */
+
+.back {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-self: flex-start;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+}
+
+.back:hover {
+  cursor: pointer;
+}
+
+.backtext {
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+  color: #84796f;
+}
+
+.backtext:hover {
+  color: #00a99d;
+  font-weight: bold;
+}
+
 .place {
   display: flex;
   flex-direction: column;
@@ -263,39 +296,15 @@ a:hover {
   align-self: flex-start;
 }
 
-.back {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-self: start;
-  align-items: flex-start;
-  padding-bottom: 1rem;
-}
-
-.back:hover {
-  cursor: pointer;
-}
-
-.backtext:hover {
-  color: #00a99d;
-  font-weight: bold;
-}
-
 .info {
   color: #AF9C8B;
   font-size: 24px;
-  align-self: start;
+  align-self: flex-start;
   padding: 0.3rem 0;
 }
 
 .info img {
   padding-right: 0.5rem;
-}
-
-.backtext {
-  padding-left: 0.5rem;
-  font-size: 1.2rem;
-  color: #84796f;
 }
 
 .rating {
@@ -317,7 +326,6 @@ a:hover {
   font-weight: bold;
 }
 
-
 .placeimage {
   width: 90%;
   margin: 10px 0;
@@ -331,20 +339,18 @@ box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
   margin-bottom: 3rem;
 }
 
-
-
-.stars-outer {
+.price-outer {
   display: inline-block;
   position: relative;
   font-family: FontAwesome;
 }
 
-.stars-outer::before {
+.price-outer::before {
   font-family: 'Signika', sans-serif;
   content: "€ € € €";
 }
 
-.stars-inner {
+.price-inner {
   position: absolute;
   top: 0;
   left: 0;
@@ -354,10 +360,10 @@ box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
   font-weight: bold;
 }
 
-.stars-inner::before {
+.price-inner::before {
   font-family: 'Signika', sans-serif;
   content: "€ € € €";
-  color: #84796f;
+  color: #5b5651;
 }
 
 .wikitext {
@@ -365,9 +371,8 @@ box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
   font-size: 18px;
 }
 
-::-webkit-scrollbar {
-    width: 20px;
-}
+/* ***** Map ***** */
+
 .map-container {
   height: 100vh;
   width: 75%;
@@ -383,6 +388,7 @@ box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
   width: 200px;
 }
 
+/* ***** Responsiveness ***** */
 
 @media (max-width: 1300px) {
   aside {
@@ -396,7 +402,6 @@ box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
 }
 
 @media (max-width: 800px) {
-
   .App {
     display: flex;
     flex-direction: column;
@@ -415,6 +420,8 @@ box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
     position: fixed;
   }
 }
+
+/* ***** Loading animation from here: https://codepen.io/animatedcreativity/pen/OjBPQJ ***** */
 
 .holder {
   position: absolute;
@@ -707,7 +714,7 @@ box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
   52% {
     transform: rotateZ(-324deg);
   }
-  102% {
+  100% {
     transform: rotateZ(-324deg);
   }
   100% {

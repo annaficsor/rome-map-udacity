@@ -18,9 +18,17 @@ class SelectedPlace extends Component {
     address: PropTypes.array.isRequired
   }
 
+  /* ** When the user clicks on the back div
+  this function will call the onUpdatePlace,
+  which will set the state of the place to false,
+  so that the user will see the main page ** */
+
   handleClick() {
     this.props.onUpdatePlace()
   }
+
+  /* ** This keyEvent function helps users who
+  use tab for navigation ** */
 
   keyEvent = (event) => {
     if (event.key == 'Enter') {
@@ -28,11 +36,19 @@ class SelectedPlace extends Component {
     }
   }
 
+  /* ** Until the state doesn't receive
+  the fetched data the page return loader
+  animation. When the data arrive the
+  page will return the content.
+  The pricePercentageRounded divStyle
+  helps to visualize the price more clearly ** */
+
   render() {
-    const starTotal = 4;
-    const starPercentage = (this.props.price.length / starTotal) * 100;
-    const starPercentageRounded = `${(Math.round(starPercentage / 10) * 10)}%`;
-    const divStyle = {width: starPercentageRounded};
+
+    const priceTotal = 4;
+    const pricePercentage = (this.props.price.length / priceTotal) * 100;
+    const pricePercentageRounded = `${(Math.round(pricePercentage / 10) * 10)}%`;
+    const divStyle = {width: pricePercentageRounded};
 
     return (
       <div className="place">
@@ -60,8 +76,8 @@ class SelectedPlace extends Component {
 
             <div className="info">
               <span>Price: </span>
-              <div className="stars-outer">
-                <div className="stars-inner" style={divStyle}></div>
+              <div className="price-outer">
+                <div className="price-inner" style={divStyle}></div>
               </div>
             </div>
 

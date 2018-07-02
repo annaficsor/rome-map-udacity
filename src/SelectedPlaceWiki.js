@@ -11,15 +11,28 @@ class SelectedPlaceWiki extends Component {
     wikiUrl: PropTypes.string.isRequired
   }
 
+  /* ** When the user clicks on the back div
+  this function will call the onUpdatePlace,
+  which will set the state of the place to false,
+  so that the user will see the main page ** */
+
   handleClick() {
     this.props.onUpdatePlace()
   }
+
+  /* ** This keyEvent function helps users who
+  use tab for navigation ** */
 
   keyEvent = (event) => {
     if (event.key == 'Enter') {
     this.props.onUpdatePlace()
     }
   }
+
+  /* ** Until the state doesn't receive
+  the fetched data the page return loader
+  animation. When the data arrive the
+  page will return the content.  ** */
 
   render() {
     return (
