@@ -379,6 +379,10 @@ box-shadow: 0px 0px 10px 3px rgba(122,55,10,0.15);
   height: 100%;
 }
 
+.gm-style-iw {
+  width: 200px;
+}
+
 
 @media (max-width: 1300px) {
   aside {

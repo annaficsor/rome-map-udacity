@@ -46,13 +46,13 @@ class App extends Component {
       let markers = [];
       let map = new window.google.maps.Map(document.getElementById('map'), {
        center: {lat: 41.9027835, lng: 12.496365500000024},
-       zoom: 13,
+       zoom: 8,
        styles: mapStyle
       });
 
       let bounds = new window.google.maps.LatLngBounds();
       let infoWindow = new window.google.maps.InfoWindow({
-        maxwidth: 200
+        maxWidth: 200
       });
 
       this.setState({
@@ -147,6 +147,9 @@ class App extends Component {
     let infowindow = this.state.infoWindow;
     let map = this.state.map;
 
+    map.setZoom(15);
+    map.setCenter(marker.getPosition());
+
     if (infowindow.marker !== marker) {
       infowindow.setContent('');
       infowindow.marker = marker;
@@ -163,7 +166,7 @@ class App extends Component {
           infowindow.setContent('<div id="pano" style="width:200px; height:200px; position:static"></div><h2>' + marker.title + '</h2>');
           let panoramaOptions = {
             position: nearStreetViewLocation,
-            disableDefaultUI:true,
+            disableDefaultUI: true,
             pov: {
               heading: 34,
               pitch: 10
