@@ -337,10 +337,41 @@ class App extends Component {
 
   /** When the user selects a type at a
   Dropdown selection menu, this state will filter
-  the type and shows the places that match ** */
+  the type and shows the places that match. On the
+  map it's also highlight the selected types ** */
 
   updateType(type) {
-    this.setState({ selectedType:type });
+    this.setState({ selectedType: type });
+
+    this.state.markers.map((loc) => {
+      if (type === "All") {
+        if (loc.id === "Attractions") {
+          loc.setIcon(`${attraction}`);
+          } else if (loc.id === "Coffee") {
+             loc.setIcon(`${coffee}`);
+          } else if (loc.id === "Restaurants") {
+             loc.setIcon(`${food}`);
+          } else if (loc.id === "Parks") {
+             loc.setIcon(`${park}`);
+          }
+      } else if ((loc.id === "Attractions") && (loc.id === type)) {
+         loc.setIcon(`${attraction}`);
+      } else if ((loc.id === "Coffee") && (loc.id === type)) {
+         loc.setIcon(`${coffee}`);
+      } else if ((loc.id === "Restaurants") && (loc.id === type)) {
+         loc.setIcon(`${food}`);
+      } else if ((loc.id === "Parks") && (loc.id === type)) {
+         loc.setIcon(`${park}`);
+      } else if ((loc.id === "Attractions") && (loc.id !== type)) {
+         loc.setIcon(`${attraction1c}`);
+      } else if ((loc.id === "Coffee") && (loc.id !== type)) {
+         loc.setIcon(`${coffee1c}`);
+      } else if ((loc.id === "Restaurants") && (loc.id !== type)) {
+         loc.setIcon(`${food1c}`);
+      } else if ((loc.id === "Parks") && (loc.id !== type)) {
+         loc.setIcon(`${park1c}`);
+      }
+    });
   }
 
   /** Return components based on the state
