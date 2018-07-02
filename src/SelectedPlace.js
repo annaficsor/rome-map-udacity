@@ -9,13 +9,13 @@ import rating from './icons/rating.svg'
 class SelectedPlace extends Component {
   static propTypes = {
     onUpdatePlace: PropTypes.func.isRequired,
-    name: PropTypes.array.isRequired,
+    name: PropTypes.string.isRequired,
     image: PropTypes.array.isRequired,
-    openingHours: PropTypes.array.isRequired,
-    url: PropTypes.array.isRequired,
-    price: PropTypes.array.isRequired,
-    rating: PropTypes.array.isRequired,
-    address: PropTypes.array.isRequired
+    openingHours: PropTypes.bool.isRequired,
+    url: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    address: PropTypes.string.isRequired
   }
 
   /* ** When the user clicks on the back div
