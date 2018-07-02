@@ -4,8 +4,11 @@ import arrow from './icons/filter-arrow.svg'
 import Downshift from 'downshift';
 
 class DropdownSelection extends Component {
+  static propTypes = { onUpdateType: PropTypes.func.isRequired };
+  
   constructor(props) {
     super(props);
+
     this.type = [
       { name: "Attractions" },
       { name: "Coffee" },

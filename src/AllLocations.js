@@ -21,7 +21,7 @@ class AllLocations extends Component {
   }
 
   keyEvent(event, location) {
-    if (event.key == 'Enter') {
+    if (event.key === 'Enter') {
     this.props.onMap(location)
     }
   }
@@ -66,7 +66,9 @@ class AllLocations extends Component {
                     {this.props.markers
                       .filter(type => type.id === title)
                       .map(location => (
-                      <li className={`loc${location.id}`} key={location.title} onClick={(e) => this.handleClick(location)} tabIndex="0">{location.title}</li>))
+                      <li className={`loc${location.id}`} key={location.title} onClick={(e) => this.handleClick(location)}
+                      onKeyPress={(e) => this.keyEvent(e, location)}
+                      tabIndex="0">{location.title}</li>))
                     }
                   </ul>
                 </div>

@@ -24,7 +24,7 @@ class SelectedPlaceWiki extends Component {
   use tab for navigation ** */
 
   keyEvent = (event) => {
-    if (event.key == 'Enter') {
+    if (event.key === 'Enter') {
     this.props.onUpdatePlace()
     }
   }
