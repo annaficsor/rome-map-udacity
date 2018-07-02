@@ -20,8 +20,8 @@ class AllLocations extends Component {
     this.props.onMap(marker)
   }
 
-  keyEvent(event, location){
-    if(event.key == 'Enter') {
+  keyEvent(event, location) {
+    if (event.key == 'Enter') {
     this.props.onMap(location)
     }
   }

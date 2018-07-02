@@ -43,7 +43,7 @@ class SelectedPlace extends Component {
         )}
 
         {this.props.name.length > 1 && (
-          <div>
+          <div className="place">
             <div className="back" onClick={() => this.handleClick()} onKeyPress={(e) => this.keyEvent(e)} tabIndex='0'>
             <img src={arrow} alt="Go back arrow"/><span className="backtext">BACK</span>
             </div>
