@@ -50,9 +50,15 @@ I downloaded icons from [Fontawesome](https://fontawesome.com/icons?d=gallery) a
 ## Built with
 
 [React](https://reactjs.org/)
+
 [Downshift](https://www.npmjs.com/package/downshift#itemtostring)
+
 [CSS loader](https://codepen.io/animatedcreativity/pen/OjBPQJ)
+
 [Yelp API](https://www.yelp.com/fusion)
+
 [CORS Anywhere](https://cors-anywhere.herokuapp.com/)
+
 [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page)
+
 [Wikipedia helper video](https://www.youtube.com/watch?v=RPz75gcHj18&)
