@@ -38,7 +38,8 @@ class App extends Component {
     wikiImage: '',
     wikiUrl: '',
     wikiName: '',
-    selectedType: ''
+    selectedType: '',
+    googleError: false
   }
 
   /* ** Loads the google map, sets the markers based
@@ -105,6 +106,11 @@ class App extends Component {
     } else {
         alert("Script not loaded");
     }
+
+    window.gm_authFailure = function() {
+      this.setState({ googleError: true})
+      console.log('Yee!');
+    }.bind(this);
   }
 
  /** With this function the selected marker's icon will be
@@ -436,9 +442,17 @@ class App extends Component {
           <h3>Sorry, the database do not have results :( </h3>
         )}
 
+
+
       </aside>
 
       <section className="map-container">
+        {this.state.googleError===true && (
+          <div className="googleError">
+          <h3>*** Looks like you have an authentication error ***</h3>
+          <p> Please put your Google Map API key in the config_helper.json file, or check the console for further information. </p>
+          </div>
+        )}
         <div id="map"></div>
       </section>
 
