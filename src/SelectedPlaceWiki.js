@@ -38,14 +38,14 @@ class SelectedPlaceWiki extends Component {
     return (
       <div className="place">
         {this.props.wikiName.length < 1 && (
-          <div className="holder">
+          <div className="holder" role="progressbar">
             <div className="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
           </div>
         )}
 
         {this.props.wikiName.length > 1 && (
-          <div className="place">
-            <div className="back" onClick={() => this.handleClick()} onKeyPress={(e) => this.keyEvent(e)} tabIndex='0'>
+          <article className="place">
+            <div className="back" onClick={() => this.handleClick()} onKeyPress={(e) => this.keyEvent(e)} tabIndex='0' role="navigation">
               <img src={arrow} alt="Go back arrow"/><span className="backtext">BACK</span>
             </div>
             <h1>{this.props.wikiName}</h1>
@@ -54,7 +54,7 @@ class SelectedPlaceWiki extends Component {
               <a href={this.props.wikiUrl}>More information >></a>
             </div>
             <img className="placeimage" src={this.props.wikiImage} alt={this.props.wikiName}/>
-          </div>
+          </article>
         )}
       </div>
     )

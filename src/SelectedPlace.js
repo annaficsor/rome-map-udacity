@@ -53,14 +53,14 @@ class SelectedPlace extends Component {
     return (
       <div className="place">
         {this.props.name.length < 1 && (
-          <div className="holder">
+          <div className="holder" role="progressbar">
             <div className="preloader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
           </div>
         )}
 
         {this.props.name.length > 1 && (
-          <div className="place">
-            <div className="back" onClick={() => this.handleClick()} onKeyPress={(e) => this.keyEvent(e)} tabIndex='0'>
+          <article className="place">
+            <div className="back" onClick={() => this.handleClick()} onKeyPress={(e) => this.keyEvent(e)} tabIndex='0' role="navigation">
             <img src={arrow} alt="Go back arrow"/><span className="backtext">BACK</span>
             </div>
 
@@ -101,7 +101,7 @@ class SelectedPlace extends Component {
               <img key={index} className="placeimage" src={image} alt={this.props.name}/>
             ))}
 
-          </div>
+          </article>
         )}
       </div>
     )

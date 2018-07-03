@@ -6,7 +6,7 @@ import AllLocations from './AllLocations'
 import SelectedPlace from './SelectedPlace'
 import SelectedPlaceWiki from './SelectedPlaceWiki'
 import scriptLoader from 'react-async-script-loader'
-import config from './config_helper.json'
+import config from './config.json'
 import $ from "jquery";
 import attraction from './icons/markers/attraction.svg'
 import coffee from './icons/markers/coffee.svg'
@@ -393,8 +393,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-      <aside className="information">
+      <main className="App">
+      <section className="information">
         {this.state.place===false && (
           <AllLocations
             markers = {this.state.markers}
@@ -444,7 +444,7 @@ class App extends Component {
 
 
 
-      </aside>
+      </section>
 
       <section className="map-container">
         {this.state.googleError===true && (
@@ -456,7 +456,7 @@ class App extends Component {
         <div id="map"></div>
       </section>
 
-      </div>
+      </main>
     );
   }
 }
