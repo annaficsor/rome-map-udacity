@@ -248,6 +248,7 @@ button.dropdown-button {
   padding-bottom: 1rem;
 }
 
+
 .back:hover {
   cursor: pointer;
 }
@@ -261,6 +262,10 @@ button.dropdown-button {
 .backtext:hover {
   color: #00a99d;
   font-weight: bold;
+}
+
+.downshift-dropdown, .dropdown-button {
+  cursor: pointer;
 }
 
 .place {

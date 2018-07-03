@@ -37,9 +37,16 @@ I used for this project two APIs for fetching additional data:
 ## How to open this app
 
 - Fork this repository, and/or clone it to your local environment
-- Install all project dependencies with npm install
+- Install all project dependencies with `npm install`
 - At the provided config_helper.json file insert your Google API key (you will need Maps JavaScript and Street View API), and your [Yelp API key](https://www.yelp.com/developers/v3/manage_app)
-- Start the server with npm start
+- Then run this lines in npm for **production mode** (it's needed if you want to check the service worker):
+..* `npm run build`
+..* `npm install -g serve`
+..* `serve -s build`
+..* Open in browser: http://localhost:5000
+- Or run `npm start` for **developer mode**
+..* Open in browser: http://localhost:3000
+
 
 ## Design
 
