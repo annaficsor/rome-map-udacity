@@ -15,6 +15,7 @@ h2 {
   color: #84796F;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  width: 200px;
 }
 
 /* ***** Section of the main manu ***** */
@@ -86,6 +87,10 @@ li {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
+}
+
+li:hover {
+  cursor: pointer;
 }
 
 .locAttractions:hover, .locCoffee:hover, .locRestaurants:hover, .locParks:hover {
