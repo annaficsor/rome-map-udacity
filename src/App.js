@@ -6,7 +6,7 @@ import AllLocations from './AllLocations'
 import SelectedPlace from './SelectedPlace'
 import SelectedPlaceWiki from './SelectedPlaceWiki'
 import scriptLoader from 'react-async-script-loader'
-import config from './config.json'
+import config from './config_helper.json'
 import $ from "jquery";
 import attraction from './icons/markers/attraction.svg'
 import coffee from './icons/markers/coffee.svg'
