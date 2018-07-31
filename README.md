@@ -9,7 +9,7 @@ Develop a single page application featuring a map of my neighborhood or a neighb
 ## App functionality
 
 The main page displays a map and a list view of the locations with a filter option. Display all location markers by default.
-When the user filter locations at the list view, the map displays the filtered locations too.
+When the user filters locations at the list view, the map displays the filtered locations too.
 When the user selects a location from the list view or from the map, the app displays additional information from third-party API (non-Google).
 
 
