@@ -1,1 +1,34 @@
-"use strict";var precacheConfig=[["/rome-map-udacity/index.html","edea9cdeea91e40c27fc12ebcc1b63d5"],["/rome-map-udacity/static/css/main.0717b8d7.css","7dec0b7a9eec06da17f9dad27f365dc8"],["/rome-map-udacity/static/js/main.76dad2fc.js","90515c34a80d2725398a3d9fb3865977"],["/rome-map-udacity/static/media/address.d6aea5fb.svg","d6aea5fb8ac5b516a016238aa17e0514"],["/rome-map-udacity/static/media/arrow-back.272bf941.svg","272bf941a3e91526dc546a36fb562fa7"],["/rome-map-udacity/static/media/attraction-onecolor.419a3715.svg","419a3715e64c30fb745537368e3e4e93"],["/rome-map-udacity/static/media/attraction-onecolor.79695a20.svg","79695a20d24113615a07ff0c702c41ac"],["/rome-map-udacity/static/media/attraction.535fa7e3.svg","535fa7e37f496078c8da1a0a7dff0735"],["/rome-map-udacity/static/media/attraction.f7b9626d.svg","f7b9626d665ce966631c25891c2cae26"],["/rome-map-udacity/static/media/closed.97a25e65.svg","97a25e65932d74e8f777c3da42afe108"],["/rome-map-udacity/static/media/coffe-onecolor.13858e82.svg","13858e822da309d1d0f6e2d334435d7a"],["/rome-map-udacity/static/media/coffe-onecolor.85a2760e.svg","85a2760ee5bed5c681f4cee9b359236a"],["/rome-map-udacity/static/media/coffee.234dd57f.svg","234dd57fbf52e39ed6984bb6f4fe76c7"],["/rome-map-udacity/static/media/coffee.b313e738.svg","b313e7385d2e877343d0ff8e1fb9a16d"],["/rome-map-udacity/static/media/filter-arrow.abfbafa1.svg","abfbafa1c4f25d1458a04e16c33e32f1"],["/rome-map-udacity/static/media/food-onecolor.1aa87d7f.svg","1aa87d7ffbac67715e0b9d108e46a190"],["/rome-map-udacity/static/media/food-onecolor.7431f7cb.svg","7431f7cb90cc6ff61049f70957527329"],["/rome-map-udacity/static/media/food.69701f0a.svg","69701f0a2b012794c109af2ae2be1181"],["/rome-map-udacity/static/media/food.968d112b.svg","968d112b99833c8c0bb224d8683865c4"],["/rome-map-udacity/static/media/marker-onecolor.0da958cd.svg","0da958cd587045e8f810b33cd8b5e17a"],["/rome-map-udacity/static/media/marker.9ceed138.svg","9ceed138555a437d60f644e174714616"],["/rome-map-udacity/static/media/open.c57da446.svg","c57da4461b54da63195f368f8fa93d78"],["/rome-map-udacity/static/media/park.0047d542.svg","0047d54231716aeb1481f4b88d8c77fb"],["/rome-map-udacity/static/media/park.2e945e18.svg","2e945e1874683e95be2b0949a1ea9f1b"],["/rome-map-udacity/static/media/parks-onecolor.4e2d4cb8.svg","4e2d4cb89bc991d608160e9c7741f7d7"],["/rome-map-udacity/static/media/parks-onecolor.71f89e4f.svg","71f89e4f3a87360ec3726a964ce5ca9e"],["/rome-map-udacity/static/media/rating.0ddd2ff2.svg","0ddd2ff26b30c20fe3609b1f174e6c9b"]],cacheName="sw-precache-v3-sw-precache-webpack-plugin-"+(self.registration?self.registration.scope:""),ignoreUrlParametersMatching=[/^utm_/],addDirectoryIndex=function(e,a){var t=new URL(e);return"/"===t.pathname.slice(-1)&&(t.pathname+=a),t.toString()},cleanResponse=function(a){return a.redirected?("body"in a?Promise.resolve(a.body):a.blob()).then(function(e){return new Response(e,{headers:a.headers,status:a.status,statusText:a.statusText})}):Promise.resolve(a)},createCacheKey=function(e,a,t,c){var r=new URL(e);return c&&r.pathname.match(c)||(r.search+=(r.search?"&":"")+encodeURIComponent(a)+"="+encodeURIComponent(t)),r.toString()},isPathWhitelisted=function(e,a){if(0===e.length)return!0;var t=new URL(a).pathname;return e.some(function(e){return t.match(e)})},stripIgnoredUrlParameters=function(e,t){var a=new URL(e);return a.hash="",a.search=a.search.slice(1).split("&").map(function(e){return e.split("=")}).filter(function(a){return t.every(function(e){return!e.test(a[0])})}).map(function(e){return e.join("=")}).join("&"),a.toString()},hashParamName="_sw-precache",urlsToCacheKeys=new Map(precacheConfig.map(function(e){var a=e[0],t=e[1],c=new URL(a,self.location),r=createCacheKey(c,hashParamName,t,/\.\w{8}\./);return[c.toString(),r]}));function setOfCachedUrls(e){return e.keys().then(function(e){return e.map(function(e){return e.url})}).then(function(e){return new Set(e)})}self.addEventListener("install",function(e){e.waitUntil(caches.open(cacheName).then(function(c){return setOfCachedUrls(c).then(function(t){return Promise.all(Array.from(urlsToCacheKeys.values()).map(function(a){if(!t.has(a)){var e=new Request(a,{credentials:"same-origin"});return fetch(e).then(function(e){if(!e.ok)throw new Error("Request for "+a+" returned a response with status "+e.status);return cleanResponse(e).then(function(e){return c.put(a,e)})})}}))})}).then(function(){return self.skipWaiting()}))}),self.addEventListener("activate",function(e){var t=new Set(urlsToCacheKeys.values());e.waitUntil(caches.open(cacheName).then(function(a){return a.keys().then(function(e){return Promise.all(e.map(function(e){if(!t.has(e.url))return a.delete(e)}))})}).then(function(){return self.clients.claim()}))}),self.addEventListener("fetch",function(a){if("GET"===a.request.method){var e,t=stripIgnoredUrlParameters(a.request.url,ignoreUrlParametersMatching),c="index.html";(e=urlsToCacheKeys.has(t))||(t=addDirectoryIndex(t,c),e=urlsToCacheKeys.has(t));var r="/rome-map-udacity/index.html";!e&&"navigate"===a.request.mode&&isPathWhitelisted(["^(?!\\/__).*"],a.request.url)&&(t=new URL(r,self.location).toString(),e=urlsToCacheKeys.has(t)),e&&a.respondWith(caches.open(cacheName).then(function(e){return e.match(urlsToCacheKeys.get(t)).then(function(e){if(e)return e;throw Error("The cached response that was expected is missing.")})}).catch(function(e){return console.warn('Couldn\'t serve response for "%s" from cache: %O',a.request.url,e),fetch(a.request)}))}});
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
+
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+
+importScripts(
+  "/rome-map-udacity/precache-manifest.f0b26504f743fd77f19966df86b93247.js"
+);
+
+workbox.clientsClaim();
+
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [].concat(self.__precacheManifest || []);
+workbox.precaching.suppressWarnings();
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.routing.registerNavigationRoute("/rome-map-udacity/index.html", {
+  
+  blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
+});
