@@ -1,7 +1,7 @@
 {
   "main.css": "/rome-map-udacity/static/css/main.f50985a0.chunk.css",
-  "main.js": "/rome-map-udacity/static/js/main.2cf797fe.chunk.js",
-  "main.js.map": "/rome-map-udacity/static/js/main.2cf797fe.chunk.js.map",
+  "main.js": "/rome-map-udacity/static/js/main.6e58db48.chunk.js",
+  "main.js.map": "/rome-map-udacity/static/js/main.6e58db48.chunk.js.map",
   "static/js/1.a9ce3b8d.chunk.js": "/rome-map-udacity/static/js/1.a9ce3b8d.chunk.js",
   "static/js/1.a9ce3b8d.chunk.js.map": "/rome-map-udacity/static/js/1.a9ce3b8d.chunk.js.map",
   "runtime~main.js": "/rome-map-udacity/static/js/runtime~main.73cd7f3a.js",
@@ -23,6 +23,6 @@
   "static/media/coffee.svg": "/rome-map-udacity/static/media/coffee.234dd57f.svg",
   "static/css/main.f50985a0.chunk.css.map": "/rome-map-udacity/static/css/main.f50985a0.chunk.css.map",
   "index.html": "/rome-map-udacity/index.html",
-  "precache-manifest.903f2bc478a576968d500f99be5ddde4.js": "/rome-map-udacity/precache-manifest.903f2bc478a576968d500f99be5ddde4.js",
+  "precache-manifest.30846526c6ad83a73cfa2f95ab0a4502.js": "/rome-map-udacity/precache-manifest.30846526c6ad83a73cfa2f95ab0a4502.js",
   "service-worker.js": "/rome-map-udacity/service-worker.js"
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/rome-map-udacity/precache-manifest.903f2bc478a576968d500f99be5ddde4.js"
+  "/rome-map-udacity/precache-manifest.30846526c6ad83a73cfa2f95ab0a4502.js"
 );
 
 workbox.clientsClaim();
