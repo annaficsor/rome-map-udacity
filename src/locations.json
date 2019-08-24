@@ -187,5 +187,167 @@
       "lat": 41.8851288,
       "lng": 12.4803363
     }
+  }, {
+    "type": "Coffee",
+    "id": 22,
+    "name": "Le Levain",
+    "ll": "41.887130,12.468750",
+    "latlng": {
+      "lat": 41.887130,
+      "lng": 12.468750
+    }
+  }, {
+    "type": "Coffee",
+    "id": 23,
+    "name": "Roscioli Caffé Pasticceria",
+    "ll": "41.893950,12.475210",
+    "latlng": {
+      "lat": 41.893950,
+      "lng": 12.475210
+    }
+  }, {
+    "type": "Coffee",
+    "id": 24,
+    "name": "Come Il Latte",
+    "ll": "41.907090,12.496030",
+    "latlng": {
+      "lat": 41.907090,
+      "lng": 12.496030
+    }
+  }, {
+    "type": "Coffee",
+    "id": 25,
+    "name": "Er Caffettiere",
+    "ll": "41.894970,12.492950",
+    "latlng": {
+      "lat": 41.894970,
+      "lng": 12.492950
+    }
+  }, {
+    "type": "Coffee",
+    "id": 26,
+    "name": "Regoli ",
+    "ll": "41.894850,12.501070",
+    "latlng": {
+      "lat": 41.894850,
+      "lng": 12.501070
+    }
+  }, {
+    "type": "Coffee",
+    "id": 27,
+    "name": "Pasticceria San Teo",
+    "ll": "41.888470,12.483380",
+    "latlng": {
+      "lat": 41.888470,
+      "lng": 12.483380
+    }
+  }, {
+    "type": "Coffee",
+    "id": 28,
+    "name": "Bar Lillo",
+    "ll": "41.887710,12.477180",
+    "latlng": {
+      "lat": 41.887710,
+      "lng": 12.477180
+    }
+  }, {
+    "type": "Coffee",
+    "id": 29,
+    "name": "Bar del Cappuccino",
+    "ll": "41.892200,12.474920",
+    "latlng": {
+      "lat": 41.892200,
+      "lng": 12.474920
+    }
+  }, {
+    "type": "Restaurants",
+    "id": 30,
+    "name": "Tonnarello",
+    "ll": "41.8897094933781,12.4691133307467",
+    "latlng": {
+      "lat": 41.8897094933781,
+      "lng": 12.4691133307467
+    }
+  }, {
+    "type": "Restaurants",
+    "id": 31,
+    "name": "Hostaria La Botticella",
+    "ll": "41.890300,12.468110",
+    "latlng": {
+      "lat": 41.890300,
+      "lng": 12.468110
+    }
+  }, {
+    "type": "Restaurants",
+    "id": 32,
+    "name": "Pizzarium Gabriele Bonci",
+    "ll": "41.906660,12.446680",
+    "latlng": {
+      "lat": 41.906660,
+      "lng": 12.446680
+    }
+  }, {
+    "type": "Restaurants",
+    "id": 34,
+    "name": "Piccolo Arancio",
+    "ll": "41.900800,12.484980",
+    "latlng": {
+      "lat": 41.900800,
+      "lng": 12.484980
+    }
+  }, {
+    "type": "Restaurants",
+    "id": 36,
+    "name": "Li Rioni",
+    "ll": "41.888710,12.497810",
+    "latlng": {
+      "lat": 41.888710,
+      "lng": 12.497810
+    }
+  }, {
+    "type": "Attractions",
+    "id": 37,
+    "name": "Vatican Museums",
+    "ll": "41.905460, 12.449540",
+    "latlng": {
+      "lat": 41.905460,
+      "lng": 12.449540
+    }
+  }, {
+    "type": "Attractions",
+    "id": 38,
+    "name": "Roman Forum",
+    "ll": "41.892578, 12.486950",
+    "latlng": {
+      "lat": 41.892578,
+      "lng": 12.486950
+    }
+  }, {
+    "type": "Attractions",
+    "id": 39,
+    "name": "Piazza del Popolo",
+    "ll": "41.910300, 12.476450",
+    "latlng": {
+      "lat": 41.910300,
+      "lng": 12.476450
+    }
+  }, {
+    "type": "Attractions",
+    "id": 40,
+    "name": "Piazza Navona",
+    "ll": "41.899130, 12.473200",
+    "latlng": {
+      "lat": 41.899130,
+      "lng": 12.473200
+    }
+  }, {
+    "type": "Attractions",
+    "id": 41,
+    "name": "Capitoline Hill",
+    "ll": "41.899410, 12.470470",
+    "latlng": {
+      "lat":41.899410,
+      "lng": 12.470470
+    }
   }
 ]

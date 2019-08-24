@@ -264,9 +264,16 @@ class App extends Component {
         })
     }).then((resp) => resp.json()
     ).then((response) => {
+      if (!response.hasOwnProperty("hours")) {
+        this.setState({
+          openingHours: "No data available",
+      })} else {
+        this.setState({
+        openingHours: response.hours[0].is_open_now,
+      })};
         this.setState({
           image: response.photos,
-          openingHours: response.hours[0].is_open_now,
+          //openingHours: response.hours[0].is_open_now,
           url: response.url,
           price: response.price,
           rating: response.rating,
@@ -275,7 +282,8 @@ class App extends Component {
           lat: response.coordinates.latitude,
           long: response.coordinates.longitude
         })
-    }).catch(() => {
+    }).catch((e) => {
+      console.log(e);
           this.setState({ hasError: true });
     })
   }
