@@ -15,7 +15,9 @@ class SelectedPlace extends Component {
     url: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
-    address: PropTypes.string.isRequired
+    address: PropTypes.string.isRequired,
+    lat: PropTypes.number.isRequired,
+    long: PropTypes.number.isRequired
   }
 
   /* ** When the user clicks on the back div
@@ -65,6 +67,9 @@ class SelectedPlace extends Component {
             </div>
 
             <h1>{this.props.name}</h1>
+            <h3 className="linkDirections">
+              <a href={`https://www.google.com/maps/dir/?api=1&destination=${this.props.lat},${this.props.long}&travelmode=walking`}>Get directions >></a>
+            </h3>
 
             <div className="info">
             <img src={address} alt="Address"/><span className="address">{this.props.address}</span>

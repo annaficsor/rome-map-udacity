@@ -8,7 +8,9 @@ class SelectedPlaceWiki extends Component {
     wikiName: PropTypes.string.isRequired,
     wiki: PropTypes.string.isRequired,
     wikiImage: PropTypes.string.isRequired,
-    wikiUrl: PropTypes.string.isRequired
+    wikiUrl: PropTypes.string.isRequired,
+    wikiLat: PropTypes.number.isRequired,
+    wikiLong: PropTypes.number.isRequired
   }
 
   /* ** When the user clicks on the back div
@@ -49,6 +51,9 @@ class SelectedPlaceWiki extends Component {
               <img src={arrow} alt="Go back arrow"/><span className="backtext">BACK</span>
             </div>
             <h1>{this.props.wikiName}</h1>
+            <h3 className="linkDirections">
+              <a href={`https://www.google.com/maps/dir/?api=1&destination=${this.props.wikiLat},${this.props.wikiLong}&travelmode=walking`}>Get directions >></a>
+            </h3>
             <div className="wikitext">{this.props.wiki}</div>
             <div className="link">
               <a href={this.props.wikiUrl}>More information >></a>

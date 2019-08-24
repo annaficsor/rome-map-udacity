@@ -34,10 +34,14 @@ class App extends Component {
     rating: 0,
     address: '',
     hasError: false,
+    lat: 0,
+    long: 0,
     wiki: '',
     wikiImage: '',
     wikiUrl: '',
     wikiName: '',
+    wikiLat: 0,
+    wikiLong: 0,
     selectedType: '',
     googleError: false
   }
@@ -109,7 +113,6 @@ class App extends Component {
 
     window.gm_authFailure = function() {
       this.setState({ googleError: true})
-      console.log('Yee!');
     }.bind(this);
   }
 
@@ -269,6 +272,8 @@ class App extends Component {
           rating: response.rating,
           address: response.location.address1,
           name: response.name,
+          lat: response.coordinates.latitude,
+          long: response.coordinates.longitude
         })
     }).catch(() => {
           this.setState({ hasError: true });
@@ -294,7 +299,7 @@ class App extends Component {
     }).done(function(data) {
       let title = data[1][0];
       title = title.replace(/\s+/g, '_');
-      this.wikiText(title);
+      this.wikiText(title, marker);
     }.bind(this)
     ).fail(function() {
         this.setState({ hasError: true })
@@ -306,7 +311,7 @@ class App extends Component {
   If an error occure the fail function set the hasError
   state to true. ** */
 
-  wikiText(title) {
+  wikiText(title, marker) {
     $.ajax({
       url: `https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts|pageimages|info&exintro=&explaintext=&piprop=original&inprop=url&titles=${title}`,
       type: 'GET',
@@ -324,7 +329,9 @@ class App extends Component {
         wiki: text,
         wikiImage: image,
         wikiUrl: url,
-        wikiName: title
+        wikiName: title,
+        wikiLat: marker.getPosition().lat(),
+        wikiLong: marker.getPosition().lng()
       })
     }.bind(this)
     ).fail(function() {
@@ -419,6 +426,8 @@ class App extends Component {
             price = {this.state.price}
             rating = {this.state.rating}
             address = {this.state.address}
+            lat = {this.state.lat}
+            long = {this.state.long}
             onUpdatePlace = {() => {
               this.updatePlace()
             }}
@@ -431,6 +440,8 @@ class App extends Component {
             wikiUrl = {this.state.wikiUrl}
             wiki = {this.state.wiki}
             wikiImage = {this.state.wikiImage}
+            wikiLat = {this.state.wikiLat}
+            wikiLong = {this.state.wikiLong}
             onUpdatePlace = {() => {
               this.updatePlace()
             }}
