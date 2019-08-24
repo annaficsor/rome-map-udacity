@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/rome-map-udacity/static/media/address.d6aea5fb.svg"
   },
   {
-    "revision": "3f6d9ec57ec86fa7ace7",
-    "url": "/rome-map-udacity/static/css/main.82f6efb8.chunk.css"
+    "revision": "2cf797fe2ec63e5b86a6",
+    "url": "/rome-map-udacity/static/css/main.f50985a0.chunk.css"
   },
   {
     "revision": "a9ce3b8d06497c73c52a",
@@ -56,8 +56,8 @@ self.__precacheManifest = [
     "url": "/rome-map-udacity/static/media/filter-arrow.abfbafa1.svg"
   },
   {
-    "revision": "3f6d9ec57ec86fa7ace7",
-    "url": "/rome-map-udacity/static/js/main.3f6d9ec5.chunk.js"
+    "revision": "2cf797fe2ec63e5b86a6",
+    "url": "/rome-map-udacity/static/js/main.2cf797fe.chunk.js"
   },
   {
     "revision": "97a25e65932d74e8f777c3da42afe108",
@@ -80,12 +80,12 @@ self.__precacheManifest = [
     "url": "/rome-map-udacity/static/media/food-onecolor.1aa87d7f.svg"
   },
   {
-    "revision": "13858e822da309d1d0f6e2d334435d7a",
-    "url": "/rome-map-udacity/static/media/coffe-onecolor.13858e82.svg"
-  },
-  {
     "revision": "4e2d4cb89bc991d608160e9c7741f7d7",
     "url": "/rome-map-udacity/static/media/parks-onecolor.4e2d4cb8.svg"
+  },
+  {
+    "revision": "13858e822da309d1d0f6e2d334435d7a",
+    "url": "/rome-map-udacity/static/media/coffe-onecolor.13858e82.svg"
   },
   {
     "revision": "0da958cd587045e8f810b33cd8b5e17a",
@@ -112,7 +112,7 @@ self.__precacheManifest = [
     "url": "/rome-map-udacity/static/media/marker.9ceed138.svg"
   },
   {
-    "revision": "4d3eb1c670c78ad7985e58ae99ffa17d",
+    "revision": "498632739d15a6cc75a09cfbfca1a849",
     "url": "/rome-map-udacity/index.html"
   }
 ];
