@@ -5,7 +5,7 @@
   "homepage": "https://annficsor.github.io/rome-map-udacity/",
   "dependencies": {
     "downshift": "^2.0.10",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-async-script-loader": "^0.3.0",
